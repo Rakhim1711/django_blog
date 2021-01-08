@@ -1,0 +1,45 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<div class="p-3 mb-2 bg-dark text-white">
+    <div class='container text-center'>
+    <a class="text-warning" href="{% url 'pic' %}"> Steps to learn Django </a>
+
+
+
+
+    {% for project in  projects %}
+
+    <h2 class="text-success">{{ project.title }}</h2>
+
+    <p class="text-danger">{{ project.description }}</p>
+
+
+
+    <img src="{{ project.image.url }}" height = 400 width=600>
+    <br>
+    <br>
+
+    {% if project.url %}
+
+    <a href="{{ product.url }}" class="btn btn-primary"> Link to image </a>
+
+
+
+
+
+
+    {% endif %}
+    {% endfor %}
+
+    <a href="{% url 'my_blog:all_blogs' %}"> Blogs </a>
+
+
+    </div>
+    </div>
+
+
+
+  {% endblock %}
